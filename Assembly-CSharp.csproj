@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\RoomMove.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.9f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -629,6 +630,10 @@
       <Project>{01cdd40a-58e0-5f77-eb9e-39f896c01325}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="SuperTiled2UnityEditor.csproj">
+      <Project>{99d1d2c1-a4c7-4d8a-49ca-5dae98df9413}</Project>
+      <Name>SuperTiled2UnityEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{8cfe514a-9857-d634-a2d5-4e65c62fe94d}</Project>
       <Name>Unity.Mathematics</Name>
@@ -648,6 +653,10 @@
     <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
       <Project>{f2832177-63e6-4280-6b55-6d566f63f9a4}</Project>
       <Name>Unity.2D.Common.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="SuperTiled2Unity.csproj">
+      <Project>{85a14a3f-3273-636e-aff5-5997120fcbbe}</Project>
+      <Name>SuperTiled2Unity</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
       <Project>{eb8ae25e-d2fc-cde6-f58d-cfaeb33977f2}</Project>
@@ -684,14 +693,6 @@
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{2ff3d8c3-aaa5-65e1-2b0b-7ed4ed1dc2de}</Project>
       <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="SuperTiled2UnityEditor.csproj">
-      <Project>{99d1d2c1-a4c7-4d8a-49ca-5dae98df9413}</Project>
-      <Name>SuperTiled2UnityEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="SuperTiled2Unity.csproj">
-      <Project>{85a14a3f-3273-636e-aff5-5997120fcbbe}</Project>
-      <Name>SuperTiled2Unity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
