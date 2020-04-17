@@ -6,6 +6,7 @@ using UnityEngine;
 public enum PlayerState{
     attack,
     walk,
+    interact
 }
 
 public class PlayerMovement : MonoBehaviour
@@ -28,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
     {
         currentState = PlayerState.walk;
         animator = GetComponent<Animator>();
-        myRigidbody = GetComponent<Rigidbody2D>();   
+        myRigidbody = GetComponent<Rigidbody2D>();
+        animator.SetFloat("moveX", 0f);
+        animator.SetFloat("moveY", -1f);
     }
 
     // Update is called once per frame
@@ -74,7 +77,9 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    void MoveCharacter() {
+    void MoveCharacter()
+    {
+        change.Normalize();
         myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
 }
