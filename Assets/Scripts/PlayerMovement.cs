@@ -2,8 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum PlayerState{
+    attack,
+    walk,
+}
+
 public class PlayerMovement : MonoBehaviour
 {
+
+    public PlayerState currentState;
 
     public float speed;
     private Rigidbody2D myRigidbody;
@@ -11,9 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
 
+    public bool attackSpan;
+
+    public float attackTime = .3f;
+
     // Start is called before the first frame update
     void Start()
     {
+        currentState = PlayerState.walk;
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();   
     }
@@ -24,7 +37,28 @@ public class PlayerMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        UpdateAnimationAndMove();
+
+        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack)
+        {
+            StartCoroutine(AttackCo());
+        }
+
+        else if (currentState == PlayerState.walk)
+        {
+            UpdateAnimationAndMove();
+        }
+    }
+
+    private IEnumerator AttackCo()
+    {
+        animator.SetBool("attacking", true);
+        currentState = PlayerState.attack;
+        yield return null;
+        animator.SetBool("attacking", false);
+        if (!attackSpan) {
+            yield return new WaitForSeconds(attackTime);
+        }
+        currentState = PlayerState.walk;
     }
 
     void UpdateAnimationAndMove() {
