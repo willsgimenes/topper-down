@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{85a14a3f-3273-636e-aff5-5997120fcbbe}</ProjectGuid>
+    <ProjectGuid>{b6b9bf45-ba23-d805-ac8c-42d0d803cfad}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>SuperTiled2Unity</AssemblyName>
@@ -616,11 +616,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{2ff3d8c3-aaa5-65e1-2b0b-7ed4ed1dc2de}</Project>
+      <Project>{382dafa3-e3d5-39bf-b441-b96ef34b013e}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{d5370852-2037-f251-bb33-660af211e620}</Project>
+      <Project>{73b30ef7-7336-74e1-8d6a-e4f1bb997d52}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>
